@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Scheduler, {SchedulerData, ViewTypes, DATE_FORMAT, DemoData} from 'react-big-scheduler'
+import Scheduler, {SchedulerData, ViewTypes, DemoData} from 'react-big-scheduler'
 import 'react-big-scheduler/lib/css/style.css'
-import moment from 'moment'
+// import moment from 'moment'
 
 import withDragDropContext from './withDndContext'
 

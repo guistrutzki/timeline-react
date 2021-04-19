@@ -4,12 +4,12 @@ import faker from "faker";
 
 import Timeline, {
   TimelineHeaders,
-  SidebarHeader,
-  DateHeader,
+  // SidebarHeader,
+  // DateHeader,
   CustomHeader
 } from "react-calendar-timeline";
 
-import {generateFakeData} from '../generate-fake-data';
+// import {generateFakeData} from '../generate-fake-data';
 
 const keys = {
   groupIdKey: "id",
@@ -24,7 +24,7 @@ const keys = {
   groupLabelKey: "title"
 };
 
-const TimelineCard = ({item, timelineContext, itemContext, getItemProps, getResizeProps}) => {
+const TimelineCard = ({item, itemContext, getItemProps, getResizeProps}) => {
   const { left: leftResizeProps, right: rightResizeProps } = getResizeProps();
   const backgroundColor = itemContext.selected ? (itemContext.dragging ? "red" : item.selectedBgColor) : item.bgColor;
   const borderColor = itemContext.resizing ? "red" : item.color;

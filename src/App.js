@@ -3,7 +3,7 @@ import GlobalStyle from './globalStyles';
 import { CustomTimeline } from './CustomTimeline';
 import 'react-calendar-timeline/lib/Timeline.css'
 
-import {BigScheduler} from './BigScheduler';
+// import {BigScheduler} from './BigScheduler';
 
 function App() {
   return (
