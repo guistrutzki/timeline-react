@@ -26,8 +26,8 @@ const keys = {
 
 const TimelineCard = ({item, itemContext, getItemProps, getResizeProps}) => {
   const { left: leftResizeProps, right: rightResizeProps } = getResizeProps();
-  const backgroundColor = itemContext.selected ? (itemContext.dragging ? "red" : item.selectedBgColor) : item.bgColor;
-  const borderColor = itemContext.resizing ? "red" : item.color;
+  // const backgroundColor = itemContext.selected ? (itemContext.dragging ? "red" : item.selectedBgColor) : item.bgColor;
+  // const borderColor = itemContext.resizing ? "red" : item.color;
 
   return (
     <div
