@@ -1,12 +1,13 @@
 import React from 'react';
 import GlobalStyle from './globalStyles';
-import { Timeline } from './Timeline';
+import { CustomTimeline } from './CustomTimeline';
+import 'react-calendar-timeline/lib/Timeline.css'
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Timeline />
+      <CustomTimeline />
     </>
   );
 }
