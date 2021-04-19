@@ -33,15 +33,15 @@ const TimelineCard = ({item, itemContext, getItemProps, getResizeProps}) => {
     <div
       {...getItemProps({
         style: {
-          backgroundColor,
-          color: item.color,
-          borderColor,
+          backgroundColor: '#FFFFFF',
+          color: '##292929',
+          borderColor: '#A99DE0',
           borderStyle: "solid",
-          borderWidth: 1,
-          borderRadius: 4,
-          borderLeftWidth: itemContext.selected ? 3 : 1,
-          borderRightWidth: itemContext.selected ? 3 : 1,
-          width: 20
+          borderWidth: 2,
+          borderRadius: 10,
+          borderLeftWidth: itemContext.selected ? 3 : 2,
+          borderRightWidth: itemContext.selected ? 3 : 2,
+          height: 50,
         },
         onMouseDown: () => {
           console.log("on item click", item);
@@ -110,7 +110,11 @@ export const CustomTimeline = () => {
       Math.floor(moment(startDate).valueOf() / 10000000) * 10000000;
 
     const endValue = moment(
-      startDate + 2 * 365.24 * 86400 * 1000
+      startDate + 0.5 * 365.24 * 86400 * 1000
+    ).valueOf();
+
+    const endValue2 = moment(
+      startDate + 1 * 365.24 * 86400 * 1000
     ).valueOf();
 
     const timelineItems = [
@@ -120,15 +124,40 @@ export const CustomTimeline = () => {
         title: "Marketing - UCLA",
         start: startValue,
         end: endValue,
-        canMove: startValue > new Date().getTime(),
-        canResize:
-          startValue > new Date().getTime()
-            ? endValue > new Date().getTime()
-              ? "both"
-              : "left"
-            : endValue > new Date().getTime()
-              ? "right"
-              : false,
+        canMove: false,
+        canResize: false,
+        className:
+          moment(startDate).day() === 6 || moment(startDate).day() === 0
+            ? "item-weekend"
+            : "",
+        bgColor: "#ff00ff",
+        selectedBgColor: "#ffffff",
+        color: "#000",
+      },
+      {
+        id: "2",
+        group: "1",
+        title: "Communications - UCLA",
+        start: startValue,
+        end: endValue,
+        canMove: false,
+        canResize: false,
+        className:
+          moment(startDate).day() === 6 || moment(startDate).day() === 0
+            ? "item-weekend"
+            : "",
+        bgColor: "#ff00ff",
+        selectedBgColor: "#ffffff",
+        color: "#000",
+      },
+      {
+        id: "3",
+        group: "3",
+        title: "MBA - Stanford",
+        start: startValue,
+        end: endValue2,
+        canMove: false,
+        canResize: false,
         className:
           moment(startDate).day() === 6 || moment(startDate).day() === 0
             ? "item-weekend"
@@ -212,19 +241,19 @@ export const CustomTimeline = () => {
         getIntervalProps,
         showPeriod,
         data,
+        timelineContext
       }) => {
         return (
           <div {...getRootProps()}>
-            {console.log(intervals)}
             {intervals.map(interval => {
-              // const intervalStyle = {
-              //   lineHeight: '30px',
-              //   textAlign: 'center',
-              //   borderLeft: '1px solid black',
-              //   cursor: 'pointer',
-              //   backgroundColor: 'Turquoise',
-              //   color: 'white'
-              // }
+              const intervalStyle = {
+                lineHeight: '30px',
+                textAlign: 'center',
+                borderLeft: '1px solid black',
+                cursor: 'pointer',
+                backgroundColor: 'Turquoise',
+                color: 'white'
+              }
                 return (
                   <div
                     onClick={() => {
@@ -232,7 +261,7 @@ export const CustomTimeline = () => {
                     }}
                     {...getIntervalProps({
                       interval,
-                      // style: intervalStyle
+                      style: intervalStyle
                     })}
                   >
                     <div className="sticky">
