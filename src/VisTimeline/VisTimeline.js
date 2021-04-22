@@ -21,6 +21,11 @@ export const VisTimeline = ({ data }) => {
       item: "bottom",
     },
     timeAxis: {scale: 'year', step: 1},
+    margin: {
+      item: {
+        vertical: 5,
+      }
+    },
     verticalScroll: false,
     horizontalScroll: true,
     type: "range",
@@ -29,8 +34,6 @@ export const VisTimeline = ({ data }) => {
     zoomMax: tenYearsInMS,
     showCurrentTime: false,
     editable: false,
-    startDate: new Date(2010, 11, 15),
-    endDate: new Date(2021, 11, 15)
   };
 
   useEffect(() => {

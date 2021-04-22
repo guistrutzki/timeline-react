@@ -24,7 +24,9 @@ const GlobalStyle = createGlobalStyle`
   .vis-item {
     background-color: #fff;
     border-radius: 10px !important;
-    padding: 10px;
+    padding: 8px;
+    border: 2px solid #A99DE0;
+    font-size: 14px;
   }
 
   .vis-panel {
@@ -48,6 +50,13 @@ const GlobalStyle = createGlobalStyle`
 
   .vis-selected {
     background-color: #fff !important;
+    border: 2px solid #A99DE0 !important;
+  }
+
+  .vis-text {
+    color: #AFAFAF !important;
+    font-weight: 900;
+    font-size: 18px;
   }
 
 `;
