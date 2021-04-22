@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .vis-group {
-    height: 220px !important;
+    height: 20px !important;
   }
 
   .vis-item {
@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
     min-width: 138px !important;
     border: 0 !important;
     top: 80px !important;
-    padding-left: 10px;
+    padding: 0 10px;
   }
 
   .vis-content {
@@ -58,7 +58,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 900;
     font-size: 18px;
   }
-
 `;
  
 export default GlobalStyle;
